@@ -4,7 +4,7 @@ In this project you will build a searchable list of country cards with Covid-19 
 
 ## Before start
 
-Please clone this repository and run `npm install` before starting the projects
+Please clone this repository and run `npm install` before starting the project.
 
 ## Available Scripts
 
