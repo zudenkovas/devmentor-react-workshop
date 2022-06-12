@@ -1,10 +1,38 @@
-import { Card, CardHeader, Avatar } from "@mui/material";
+import {
+  Card,
+  CardHeader,
+  Avatar,
+  CardContent,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
+import { Country } from "../../api/types";
 
-const CountryCard = () => {
+type CountryCardProps = Country;
+const CountryCard = ({
+  country,
+  countryInfo,
+  cases,
+  deaths,
+  recovered,
+}: CountryCardProps) => {
   return (
     <Card>
-      <CardHeader avatar={<Avatar />} title={"CountryName"} />
-      Country
+      <CardHeader avatar={<Avatar src={countryInfo.flag} />} title={country} />
+      <CardContent>
+        <List dense>
+          <ListItem>
+            <ListItemText primary={`Cases: ${cases}`} />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary={`Deaths: ${deaths}`} />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary={`Recovered: ${recovered}`} />
+          </ListItem>
+        </List>
+      </CardContent>
     </Card>
   );
 };
