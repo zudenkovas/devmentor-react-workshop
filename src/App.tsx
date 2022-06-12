@@ -1,11 +1,11 @@
 import Header from "./components/Header";
-import CountriesContainer from "./containers/Countries";
+import MainRouter from "./navigation/MainRouter";
 
 function App() {
   return (
     <>
       <Header />
-      <CountriesContainer />
+      <MainRouter />
     </>
   );
 }
