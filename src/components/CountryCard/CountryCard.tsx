@@ -7,7 +7,10 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { Country } from "../../api/types";
+import { generatePath } from "react-router-dom";
+import NavLink from "../Link";
+import { RouteKey } from "../../navigation/routes";
+import { Country } from "../../api";
 
 type CountryCardProps = Country;
 const CountryCard = ({
@@ -19,7 +22,16 @@ const CountryCard = ({
 }: CountryCardProps) => {
   return (
     <Card>
-      <CardHeader avatar={<Avatar src={countryInfo.flag} />} title={country} />
+      <NavLink
+        to={generatePath(RouteKey.Country, { id: country })}
+        underline="none"
+        color="inherit"
+      >
+        <CardHeader
+          avatar={<Avatar src={countryInfo.flag} />}
+          title={country}
+        />
+      </NavLink>
       <CardContent>
         <List dense>
           <ListItem>
